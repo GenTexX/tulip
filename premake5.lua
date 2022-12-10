@@ -31,7 +31,7 @@ project "tulip"
 	location "tulip"
 	kind "StaticLib"
 	language "C++"
-	cppdialect "C++17"
+	cppdialect "C++20"
 	staticruntime "on"
 	
 	targetdir ("bin/" .. outputDir .. "/%{prj.name}")
@@ -88,7 +88,7 @@ project "sandbox"
 	location "sandbox"
 	kind "ConsoleApp"
 	language "C++"
-	cppdialect "C++17"
+	cppdialect "C++20"
 	staticruntime "on"
 	postbuildcommands {
 		"copy ..\\vendor\\SDL\\lib\\SDL2.dll ..\\bin\\%{cfg.buildcfg}-%{cfg.architecture}\\sandbox"
