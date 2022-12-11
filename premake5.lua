@@ -20,10 +20,6 @@ includeDir["SPDLOG"] = "vendor/spdlog/include"
 includeDir["GLEW"] = "vendor/GLEW/include"
 libDir["GLEW"] = "vendor/GLEW/lib"
 
---SDL
-includeDir["SDL"] = "vendor/SDL/include"
-libDir["SDL"] = "vendor/SDL/lib"
-
 --GLM
 includeDir["GLM"] = "vendor/glm/include"
 
@@ -53,7 +49,6 @@ project "tulip"
 		"%{prj.name}/src",
 		"%{includeDir.SPDLOG}",
 		"%{includeDir.GLEW}",
-		"%{includeDir.SDL}",
 		"%{includeDir.GLM}",
 	}
 	
@@ -67,9 +62,8 @@ project "tulip"
 	
 	filter "system:windows"
 		systemversion "latest"
-		
 		defines{
-			"SF_PLATFORM_WINDOWS",
+			"TULIP_PLATFORM_WINDOWS",
 			"NOMINMAX",
 			"_CRT_SECURE_NO_WARNINGS"
 		}
@@ -103,7 +97,6 @@ project "sandbox"
 
 	includedirs{
 		includeDir["SPDLOG"],
-		includeDir["SDL"],
 		includeDir["GLEW"],
 		includeDir["GLM"],
 		"tulip/src"
@@ -112,13 +105,10 @@ project "sandbox"
 	libdirs
 	{
 		"%{libDir.GLEW}",
-		"%{libDir.SDL}"
 	}
 
 	links{
 		"tulip",
-		"SDL2.lib",
-		"SDL2main.lib",
 		"glu32.lib",
 		"glew32s.lib",
 		"opengl32.lib"

@@ -2,6 +2,7 @@
 
 #include <string>
 #include <Windows.h>
+#include <windowsx.h>
 
 #include <core\core.h>
 #include <window\window.h>
@@ -16,6 +17,9 @@ namespace tulip {
 		WindowsWindow(const Window& other) = delete;
 		WindowsWindow& operator=(const Window& other) = delete;
 		virtual ~WindowsWindow();
+
+		virtual void hide() override;
+		virtual void show() override;
 
 		virtual void update();
 		virtual bool shouldClose();
@@ -41,7 +45,11 @@ namespace tulip {
 		bool m_shouldClose;
 
 		bool processMessages();
-		RECT getRect() const;
+		RECT getClientRect() const;
+		RECT getWindowRect() const;
+
+		friend LRESULT CALLBACK windowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
+
 	};
 
 }
