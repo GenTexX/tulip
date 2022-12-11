@@ -322,9 +322,6 @@ namespace tulip {
 			break;
 		}
 
-
-		//TULIP_CORE_TRACE("LPARAM:\t{}", lParam);
-
 		return DefWindowProc(hWnd, uMsg, wParam, lParam);
 	}
 

@@ -67,13 +67,11 @@ int main() {
 
 	window->setEventCallback(myEventCallback);
 
-	TULIP_TRACE("Window Size: ({}, {})", window->getWidth(), window->getHeight());
-	TULIP_TRACE("Window Position: ({}, {})", window->getPosX(), window->getPosY());;
-	TULIP_TRACE("Window Title: {}", window->getTitle());
 
 	if (glewInit() != GLEW_OK) {
 		TULIP_ERROR("Failed to initialize GLEW!");
 	}
+	TULIP_TRACE("OpenGL Verion {}", (const char*) glGetString(GL_VERSION));
 
 	tulip::GraphicsAPI::setClearColor(0.2f, 0.6f, 0.4f, 1.0f);
 	

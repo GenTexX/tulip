@@ -23,6 +23,11 @@ libDir["GLEW"] = "vendor/GLEW/lib"
 --GLM
 includeDir["GLM"] = "vendor/glm/include"
 
+--IMGUI
+includeDir["IMGUI"] = "vendor/imgui"
+
+include "vendor/imgui"
+
 project "tulip"
 	location "tulip"
 	kind "StaticLib"
@@ -50,10 +55,12 @@ project "tulip"
 		"%{includeDir.SPDLOG}",
 		"%{includeDir.GLEW}",
 		"%{includeDir.GLM}",
+		"%{includeDir.IMGUI}"
 	}
 	
 	links
 	{	
+		"tulipimgui"
 	}
 
 	defines {
@@ -99,6 +106,7 @@ project "sandbox"
 		includeDir["SPDLOG"],
 		includeDir["GLEW"],
 		includeDir["GLM"],
+		"%{includeDir.IMGUI}",
 		"tulip/src"
 	}
 
@@ -111,7 +119,8 @@ project "sandbox"
 		"tulip",
 		"glu32.lib",
 		"glew32s.lib",
-		"opengl32.lib"
+		"opengl32.lib",
+		"tulipimgui"
 	}
 	
 	defines {
