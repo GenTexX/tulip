@@ -1,7 +1,7 @@
 #pragma once
 
 #include <string>
-#include <Windows.h>
+#include <platform/windows/platformWindows.h>
 #include <windowsx.h>
 
 #include <core\core.h>
@@ -17,6 +17,9 @@ namespace tulip {
 		WindowsWindow(const Window& other) = delete;
 		WindowsWindow& operator=(const Window& other) = delete;
 		virtual ~WindowsWindow();
+
+		virtual TulipWindowHandle getWindowHandle();
+		virtual OGLContext getContext() const;
 
 		virtual void hide() override;
 		virtual void show() override;
@@ -40,8 +43,7 @@ namespace tulip {
 		std::wstring m_wndClassName;
 		HINSTANCE m_hInstance;
 		HWND m_hWnd;
-		HDC m_deviceContext;
-		HGLRC m_glHandle;
+		OGLContext m_context;
 		bool m_shouldClose;
 
 		bool processMessages();

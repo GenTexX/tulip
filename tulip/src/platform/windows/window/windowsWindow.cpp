@@ -5,6 +5,10 @@
 #include <event\windowEvent.h>
 #include <event\keycode.h>
 
+#include <backends\imgui_impl_win32.h>
+
+extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
+
 namespace tulip {
 	WindowsWindow::WindowsWindow(const int& width, const int& height, const std::string& title, const int& posX, const int& posY) {
 		m_eventCallback = nullptr;
@@ -67,21 +71,28 @@ namespace tulip {
 			0, 0, 0
 		};
 
-		this->m_deviceContext = GetDC(this->m_hWnd);
-		int pf = ChoosePixelFormat(this->m_deviceContext, &pfd);
-		SetPixelFormat(this->m_deviceContext, pf, &pfd);
-		this->m_glHandle = wglCreateContext(this->m_deviceContext);
-		wglMakeCurrent(this->m_deviceContext, this->m_glHandle);
-
+		this->m_context.deviceContext = GetDC(this->m_hWnd);
+		int pf = ChoosePixelFormat(this->m_context.deviceContext, &pfd);
+		SetPixelFormat(this->m_context.deviceContext, pf, &pfd);
+		this->m_context.glContext = wglCreateContext(this->m_context.deviceContext);
+		wglMakeCurrent(this->m_context.deviceContext, this->m_context.glContext);
 	}
 
 	WindowsWindow::~WindowsWindow() {
 
-		ReleaseDC(this->m_hWnd, this->m_deviceContext);
-		wglDeleteContext(this->m_glHandle);
+		ReleaseDC(this->m_hWnd, this->m_context.deviceContext);
+		wglDeleteContext(this->m_context.glContext);
 
 		UnregisterClass(this->m_wndClassName.c_str(), this->m_hInstance);
 
+	}
+
+	TulipWindowHandle WindowsWindow::getWindowHandle() {
+		return &(this->m_hWnd);
+	}
+
+	OGLContext WindowsWindow::getContext() const {
+		return this->m_context;
 	}
 
 	void WindowsWindow::hide() {
@@ -94,7 +105,7 @@ namespace tulip {
 
 	void WindowsWindow::update() {
 		this->m_shouldClose = !processMessages();
-		SwapBuffers(this->m_deviceContext);
+		SwapBuffers(this->m_context.deviceContext);
 	}
 
 	bool WindowsWindow::shouldClose() {
@@ -203,6 +214,9 @@ namespace tulip {
 
 	LRESULT CALLBACK windowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
 
+		if (ImGui_ImplWin32_WndProcHandler(hWnd, uMsg, wParam, lParam))
+			return true;
+
 		WindowsWindow* wnd = reinterpret_cast<WindowsWindow*>(GetWindowLongPtr(hWnd, GWLP_USERDATA));
 
 		switch (uMsg)
@@ -266,7 +280,7 @@ namespace tulip {
 			return 0;
 		case WM_KEYDOWN:
 			if (wnd->m_eventCallback != nullptr) {
-				KeyPressedEvent e = KeyPressedEvent(wParam);
+				KeyPressedEvent e = KeyPressedEvent((KeyCode)wParam);
 				wnd->m_eventCallback(e);
 			}
 			return 0;

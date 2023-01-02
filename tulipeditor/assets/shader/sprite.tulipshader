@@ -1,0 +1,33 @@
+#shader vertex
+#version 410
+
+layout(location = 0) in vec4 vertexPosition_modelspace;
+layout(location = 1) in vec2 texture_coordinate;
+
+uniform mat4 u_Model;
+uniform mat4 u_View;
+uniform mat4 u_Projection;
+
+out vec2 v_texture_coordinate;
+
+void main() {
+	v_texture_coordinate = texture_coordinate;
+	vec4 vertexPosition_worldSpace = u_Model * vertexPosition_modelspace;
+	gl_Position = u_Projection * ( u_View * vertexPosition_worldSpace);
+}
+
+
+#shader fragment
+#version 410
+
+layout(location = 0) out vec4 color;
+layout(location = 1) out vec4 texcord;
+
+uniform vec4 u_Color;
+uniform sampler2D u_Texture;
+in vec2 v_texture_coordinate;
+
+void main() { 
+	color = texture(u_Texture, v_texture_coordinate) * u_Color;
+	texcord = vec4(v_texture_coordinate, 0.0, 1.0);
+}

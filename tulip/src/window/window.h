@@ -14,6 +14,9 @@ namespace tulip {
 
 		virtual ~Window() {}
 
+		virtual TulipWindowHandle getWindowHandle() = 0;
+		virtual OGLContext getContext() const = 0;
+
 		virtual void update() = 0;
 		virtual bool shouldClose() = 0;
 
