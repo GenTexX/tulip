@@ -1,6 +1,6 @@
 ### About
 
-Tulip is a mini WIP-Game-Engine. I do not really intend to make games with Tulip but I amr really interested in Game-Engineering and I want to know, how things work. So tulip was born.
+Tulip is a mini WIP-Game-Engine. I do not really intend to make games with Tulip but I am really interested in Game-Engineering and I want to know, how things work. So tulip was born.
 
 ### Get Started
 
