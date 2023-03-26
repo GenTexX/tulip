@@ -12,6 +12,8 @@
 *.sln
 *.vcxproj
 *.vcxproj.filters
+*.csproj
+*.csproj.filters
 
 bin-int/*
 
@@ -22,9 +24,9 @@ bin-int/*
 mono_crash.*
 
 # Build results
-[Dd]ebug/
+./[Dd]ebug/
 [Dd]ebugPublic/
-[Rr]elease/
+./[Rr]elease/
 [Rr]eleases/
 x64/
 x86/

@@ -32,5 +32,7 @@ Visuals
 	- Mirror
 	
 Editor
+	- outline selected object
+	- gizmos
 	- Node Editor (Materias, PostProcessing, etc)
 	

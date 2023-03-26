@@ -1,0 +1,6 @@
+C:\dev\tulip\tulipscript\resources\scripts\tulipscriptcore.dll
+C:\dev\tulip\tulipscript\resources\scripts\tulipscriptcore.pdb
+C:\dev\tulip\tulipscript\resources\scripts-int\debug\tulipscriptcore.csproj.AssemblyReference.cache
+C:\dev\tulip\tulipscript\resources\scripts-int\debug\tulipscriptcore.csproj.CoreCompileInputs.cache
+C:\dev\tulip\tulipscript\resources\scripts-int\debug\tulipscriptcore.dll
+C:\dev\tulip\tulipscript\resources\scripts-int\debug\tulipscriptcore.pdb
