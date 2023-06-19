@@ -4,3 +4,9 @@ C:\dev\tulip\tulipscript\resources\scripts-int\debug\tulipscriptcore.csproj.Asse
 C:\dev\tulip\tulipscript\resources\scripts-int\debug\tulipscriptcore.csproj.CoreCompileInputs.cache
 C:\dev\tulip\tulipscript\resources\scripts-int\debug\tulipscriptcore.dll
 C:\dev\tulip\tulipscript\resources\scripts-int\debug\tulipscriptcore.pdb
+D:\dev\tulip\tulipscript\resources\scripts\tulipscriptcore.dll
+D:\dev\tulip\tulipscript\resources\scripts\tulipscriptcore.pdb
+D:\dev\tulip\tulipscript\resources\scripts-int\debug\tulipscriptcore.csproj.AssemblyReference.cache
+D:\dev\tulip\tulipscript\resources\scripts-int\debug\tulipscriptcore.csproj.CoreCompileInputs.cache
+D:\dev\tulip\tulipscript\resources\scripts-int\debug\tulipscriptcore.dll
+D:\dev\tulip\tulipscript\resources\scripts-int\debug\tulipscriptcore.pdb

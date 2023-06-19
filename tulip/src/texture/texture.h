@@ -3,6 +3,7 @@
 #include <core/core.h>
 
 #include <glm.hpp>
+#include <string>
 
 namespace tulip {
 
@@ -24,6 +25,7 @@ namespace tulip {
 		TextureType texture_type;
 		TextureFormat texture_format;
 		TextureMinMagFilter texture_min_mag_filter;
+		boolean flip;
 
 	};
 

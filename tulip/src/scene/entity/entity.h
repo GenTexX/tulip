@@ -22,7 +22,9 @@ namespace tulip {
 		bool operator!=(const Entity& other) { return m_handle != other.m_handle; };
 
 
-		operator bool() { return m_handle != entt::null; };
+		operator bool() { 
+			return m_handle != entt::null; 
+		}
 
 		template<typename T, typename... Args>
 		void addComponent(Args&&... args) {
@@ -42,6 +44,10 @@ namespace tulip {
 		template<typename T, typename... Other>
 		bool hasComponent() const {
 			return m_scene->m_registry.any_of<T, Other...>(m_handle);
+		}
+
+		void reset() {
+			m_handle = entt::null;
 		}
 
 	private:

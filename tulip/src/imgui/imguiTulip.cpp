@@ -97,9 +97,8 @@ namespace tulip {
 		fontContainer.emplace_back(io.Fonts->AddFontFromFileTTF(path.c_str(), 16.0));
 		fontContainer.emplace_back(io.Fonts->AddFontFromFileTTF(path.c_str(), 18.5f));
 		fontContainer.emplace_back(io.Fonts->AddFontFromFileTTF(path.c_str(), 22.0f));
-
 		s_fonts[font] = fontContainer;
-
+		io.Fonts->Build();
 	}
 
 	void ImGuiTulip::pushFont(const std::string& font, uint8_t size) {

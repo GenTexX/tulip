@@ -23,6 +23,10 @@ namespace tulip {
 
 		void loadFonts();
 
+		void resetSelectedEntity() {
+			m_selected_entity.reset();
+		}
+
 	private:
 		Ref<Scene> m_active_scene;
 		bool m_scene_valid;

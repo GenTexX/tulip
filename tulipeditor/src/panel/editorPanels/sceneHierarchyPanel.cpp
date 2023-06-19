@@ -20,6 +20,9 @@ namespace tulip {
 					if (ImGui::IsItemClicked())
 					{
 						m_global->activeScene()->removeEntity(entity);
+						if (m_global->selectedEntity() == entity) {
+							m_global->resetSelectedEntity();
+						}
 						TULIP_CORE_TRACE("DELETE");
 
 					}

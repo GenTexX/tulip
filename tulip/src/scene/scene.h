@@ -31,14 +31,7 @@ namespace tulip {
 		Entity activeCamera();
 
 		using EntityIterateFunction = std::function<void(Entity)>;
-		void forEachEntity(EntityIterateFunction func) const {
-			m_registry.each([&](auto handle) {
-				
-				Entity entity(handle, this);
-				func(entity);
-				
-				});
-		}
+		void forEachEntity(EntityIterateFunction func) const;
 
 	private:
 		Registry  m_registry;

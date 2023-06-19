@@ -5,43 +5,6 @@
             {
                 "uuid": "not_implemented_yet",
                 "tag_c": {
-                    "tag": "Image"
-                },
-                "tra_c": {
-                    "trn": {
-                        "v.x": 0.0,
-                        "v.y": 0.0,
-                        "v.z": 0.0
-                    },
-                    "rot": {
-                        "v.x": 0.0,
-                        "v.y": 0.0,
-                        "v.z": 45.0
-                    },
-                    "sca": {
-                        "v.x": 4.0,
-                        "v.y": 4.0,
-                        "v.z": 1.0
-                    }
-                },
-                "spr_c": {
-                    "col": {
-                        "v.x": 1.0,
-                        "v.y": 1.0,
-                        "v.z": 0.3849000036716461,
-                        "v.w": 1.0
-                    },
-                    "spr": {
-                        "pth": "C:\\Users\\Phili\\OneDrive\\Desktop\\cave.png",
-                        "flt": 2,
-                        "fmt": 1,
-                        "typ": 1
-                    }
-                }
-            },
-            {
-                "uuid": "not_implemented_yet",
-                "tag_c": {
                     "tag": "Camera"
                 },
                 "tra_c": {
@@ -78,7 +41,7 @@
                                         },
                                         "m[1]": {
                                             "v.x": 0.0,
-                                            "v.y": -0.09952283650636673,
+                                            "v.y": -0.15894868969917298,
                                             "v.z": 0.0,
                                             "v.w": 0.0
                                         },
@@ -99,6 +62,43 @@
                                 "projection_width": 16.0
                             }
                         }
+                    }
+                }
+            },
+            {
+                "uuid": "not_implemented_yet",
+                "tag_c": {
+                    "tag": "Empty Entity"
+                },
+                "tra_c": {
+                    "trn": {
+                        "v.x": 0.0,
+                        "v.y": 0.0,
+                        "v.z": 0.0
+                    },
+                    "rot": {
+                        "v.x": 0.0,
+                        "v.y": 0.0,
+                        "v.z": 0.0
+                    },
+                    "sca": {
+                        "v.x": 13.850000381469727,
+                        "v.y": 7.300000190734863,
+                        "v.z": 1.0
+                    }
+                },
+                "spr_c": {
+                    "col": {
+                        "v.x": 1.0,
+                        "v.y": 1.0,
+                        "v.z": 1.0,
+                        "v.w": 1.0
+                    },
+                    "spr": {
+                        "pth": "C:\\Users\\Phili\\Pictures\\FishPavingStones_flatsphere_large.png",
+                        "flt": 1,
+                        "fmt": 1,
+                        "typ": 1
                     }
                 }
             }

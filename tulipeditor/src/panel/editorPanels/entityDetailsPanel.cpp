@@ -180,7 +180,7 @@ namespace tulip {
 						float input = size_avail.x - buttonSize.x - 10.0f;
 						ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2{ 10.0f, 0.0f });
 						ImGui::PushItemWidth(input);
-						ImGui::InputText("##LABEL", &sprite_path, ImGuiInputTextFlags_ReadOnly);
+						//ImGui::InputText("##LABEL", &sprite_path, ImGuiInputTextFlags_ReadOnly);
 						ImGui::SameLine();
 						if (ImGuiTulip::ButtonPrimary("...", false, buttonSize)) {
 							std::string image_file = Platform::openFile("PNG (*.png)\0*.png\0");

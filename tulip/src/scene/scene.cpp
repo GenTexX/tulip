@@ -59,4 +59,13 @@ namespace tulip {
 
 	Entity Scene::activeCamera() { return Entity(m_active_camera, this); }
 
+	void Scene::forEachEntity(EntityIterateFunction func) const {
+		m_registry.each([&](auto handle) {
+
+			Entity entity(handle, this);
+			func(entity);
+
+			});
+	}
+
 }
